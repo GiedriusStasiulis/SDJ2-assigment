@@ -6,8 +6,20 @@ public class ClientController
 	
 	public ClientController() throws RemoteException
 	{
-		this.clientView = new ClientView();		
+		
 	}
 	
+	public void setView(ClientView clientView)
+	{
+		this.clientView=clientView;
+	}
+	public  ClientView getView()
+	{
+		return this.clientView;
+	}
+	public void exit()
+	{
+		System.exit(1);
+	}
 
 }

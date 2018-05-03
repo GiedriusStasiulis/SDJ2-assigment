@@ -28,8 +28,6 @@ public class ServerModelManager extends UnicastRemoteObject implements RMIserver
 	@Override
 	public MemberList getNonPaidMembers() throws RemoteException 
 	{
-		System.out.println("Lala");
-		
 		MemberList tempList = new MemberList();
 		
 		for(int i = 0; i < memberList.size(); i++)
