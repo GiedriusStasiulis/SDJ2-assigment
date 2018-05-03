@@ -4,9 +4,9 @@ public class ClientController
 {
 	private ClientView clientView;
 	
-	public ClientController(ClientView clientView) throws RemoteException
+	public ClientController() throws RemoteException
 	{
-		this.clientView = clientView;		
+		this.clientView = new ClientView();		
 	}
 	
 

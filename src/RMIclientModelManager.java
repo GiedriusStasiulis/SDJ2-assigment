@@ -7,12 +7,16 @@ public class RMIclientModelManager extends Observable
 {
 	RMIserverInterface serverInterface;
 	ClientController clientController;
+	ClientView clientView;
 	private MemberList memberList;
 	
-	public RMIclientModelManager()
+	public RMIclientModelManager() throws RemoteException
 	{
 		super();    	
 
+		this.clientController = new ClientController();		
+		
+		
 		try
 		{
 			serverInterface = (RMIserverInterface) Naming.lookup("rmi://localhost:1099/rmiServer");  
