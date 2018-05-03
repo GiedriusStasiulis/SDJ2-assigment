@@ -17,7 +17,7 @@ public class RMIserver
 	    ml.addMemberToList(m3);
 	    ml.addMemberToList(m4);
 	     
-	    ThreadSafeMemberList tsml = new ThreadSafeMemberList(ml);
+	    ProxyMemberList tsml = new ProxyMemberList(ml);
 	    
 	    serverModelManager.addMembersToServer(ml);
 	}

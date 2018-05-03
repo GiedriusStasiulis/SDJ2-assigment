@@ -1,11 +1,10 @@
 import java.rmi.RemoteException;
 
-public class ThreadSafeMemberList implements MemberListInterface
+public class ProxyMemberList implements MemberListInterface
 {
-
 	private static MemberList memList;
 	 
-	public ThreadSafeMemberList(MemberList memList)
+	public ProxyMemberList(MemberList memList)
 	{
 	   this.memList = memList;
 	}	
