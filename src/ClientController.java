@@ -4,7 +4,9 @@ public class ClientController
 {
 	private ClientView clientView;
 	
-	public ClientController() throws RemoteException
+	private static ClientController instance;
+	
+	private ClientController() throws RemoteException
 	{
 		
 	}
@@ -13,13 +15,19 @@ public class ClientController
 	{
 		this.clientView=clientView;
 	}
+	
 	public  ClientView getView()
 	{
 		return this.clientView;
 	}
-	public void exit()
+	
+	public static ClientController getInstance() throws RemoteException
 	{
-		System.exit(1);
+		if (instance == null)
+		{
+			instance = new ClientController();
+		}
+		
+		return instance;
 	}
-
 }

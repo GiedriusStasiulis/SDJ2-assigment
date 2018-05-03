@@ -8,7 +8,7 @@ public class RMIclientModelManager implements Observer
 {
 	RMIserverInterface serverInterface;
 	ClientController clientController;
-	private ClientView observable ;
+	private static ClientView observable;
 	
 	private MemberList memberList;
 	
@@ -19,28 +19,27 @@ public class RMIclientModelManager implements Observer
 		observable = obs;
 		observable.addObserver(this);
 				
-		this.clientController = new ClientController();		
+		this.clientController = ClientController.getInstance();	//Singleton instance	
 		this.clientController.setView(observable);	
 		
 		try
 		{
 			serverInterface = (RMIserverInterface) Naming.lookup("rmi://localhost:1099/rmiServer");  
 			memberList = serverInterface.getNonPaidMembers();		
-			
-			//System.out.println(memberList);
 		}
 
 		catch(Exception e)
 		{
 			e.printStackTrace();            
 		}       
+		
 		clientController.getView().getInput();
 	}
 	 
 	public MemberList getNonPaidMembers() throws RemoteException
 	{
 		return this.memberList;
-	}
+	}	
 
 	@Override
 	public void update(Observable arg0, Object arg1) 

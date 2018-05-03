@@ -7,10 +7,7 @@ import java.util.Scanner;
 public class ClientView extends Observable
 {
 	public ClientView() throws RemoteException
-	{
-		ClientController clientController = new ClientController();
-		MemberList membList = new MemberList();
-		
+	{		
 		System.out.println("------ Welcome to VIA system! -=----");
 		System.out.println("Press 1 to list non-paid members");
 		System.out.println("Press 2 to quit");
