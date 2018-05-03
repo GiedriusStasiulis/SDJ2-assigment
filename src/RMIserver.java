@@ -6,10 +6,10 @@ public class RMIserver
 	{		
 		ServerModelManager serverModelManager = new ServerModelManager();		
 		
-		Member m1= new Member("name1", "123", false);
-	    Member m2= new Member("name2", "123", true);
-	    Member m3= new Member("name3", "123", false);
-	    Member m4= new Member("name4", "123", false);
+		Member m1= new Member("Tom", "82563652", false);
+	    Member m2= new Member("Adam", "82365415", true);
+	    Member m3= new Member("Nancy", "53415265", false);
+	    Member m4= new Member("Edward", "65324578", false);
 	     
 	    MemberList ml = new MemberList();
 	    ml.addMemberToList(m1);
